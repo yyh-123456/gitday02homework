@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        canvas {
+            border: 1px solid black;
+            box-sizing: border-box;
+        }
+    </style>
+</head>
+
+<body>
+    <canvas width="600" height="400"></canvas>
+</body>
+<script>
+    var cans = document.querySelector("canvas")
+
+    var ctx = cans.getContext("2d")
+
+    var grideSize = 10;
+
+    // var cansWitdh = cans.width
+    // var cansHeight = cans.height
+    var cansWitdh = ctx.canvas.width
+    var cansHeight = ctx.canvas.height
+    console.log(cansWitdh, cansHeight)
+
+    var rowNum = cansWitdh / grideSize
+    var colNum = cansHeight / grideSize
+
+    for (var i = 1; i < colNum; i++) {
+        ctx.beginPath();
+        ctx.moveTo(0, grideSize * i + 0.5)
+        ctx.lineTo(cansWitdh, grideSize * i + 0.5)
+        ctx.strokeStyle = "green"
+            // ctx.closePath();
+        ctx.stroke();
+    }
+    for (var i = 1; i < rowNum; i++) {
+        ctx.beginPath();
+        ctx.moveTo(grideSize * i + 0.5, 0)
+        ctx.lineTo(grideSize * i + 0.5, cansHeight)
+        ctx.strokeStyle = "green"
+            // ctx.closePath();
+        ctx.stroke();
+    }
+
+    ctx.beginPath();
+    ctx.moveTo(20, 20)
+    ctx.lineTo(25, 30)
+    ctx.lineTo(15, 30)
+    ctx.closePath()
+    ctx.fill();
+
+    ctx.beginPath();
+    ctx.moveTo(20, 30)
+    ctx.lineTo(20, 380)
+    ctx.strokeStyle = "red"
+    ctx.stroke()
+    ctx.closePath()
+
+    ctx.beginPath();
+    ctx.moveTo(20, 380)
+    ctx.lineTo(580, 380)
+    ctx.strokeStyle = "red"
+    ctx.stroke()
+    ctx.closePath()
+
+    ctx.beginPath();
+    ctx.moveTo(580, 380)
+    ctx.lineTo(570, 375)
+    ctx.lineTo(570, 385)
+    ctx.closePath()
+    ctx.fill();
+
+    ctx.beginPath();
+    ctx.moveTo(20, 380)
+    ctx.lineTo(100, 280)
+    ctx.lineTo(200, 240)
+    ctx.lineTo(300, 160)
+    ctx.lineTo(400, 80)
+    ctx.lineTo(520, 320)
+    ctx.strokeStyle = "blue"
+    ctx.stroke()
+    ctx.closePath()
+
+    ctx.beginPath();
+    ctx.moveTo(102.5, 282.5)
+    ctx.lineTo(102.5, 277.5)
+    ctx.lineTo(97.5, 277.5)
+    ctx.lineTo(97.5, 282.5)
+    ctx.closePath()
+    ctx.fill();
+
+    ctx.beginPath();
+    ctx.moveTo(202.5, 242.5)
+    ctx.lineTo(202.5, 237.5)
+    ctx.lineTo(197.5, 237.5)
+    ctx.lineTo(197.5, 242.5)
+    ctx.closePath()
+    ctx.fill();
+
+    ctx.beginPath();
+    ctx.moveTo(302.5, 162.5)
+    ctx.lineTo(302.5, 157.5)
+    ctx.lineTo(297.5, 157.5)
+    ctx.lineTo(297.5, 162.5)
+    ctx.closePath()
+    ctx.fill();
+
+    ctx.beginPath();
+    ctx.moveTo(402.5, 82.5)
+    ctx.lineTo(402.5, 77.5)
+    ctx.lineTo(397.5, 77.5)
+    ctx.lineTo(397.5, 82.5)
+    ctx.closePath()
+    ctx.fill();
+
+    ctx.beginPath();
+    ctx.moveTo(522.5, 322.5)
+    ctx.lineTo(522.5, 317.5)
+    ctx.lineTo(517.5, 317.5)
+    ctx.lineTo(517.5, 322.5)
+    ctx.closePath()
+    ctx.fill();
+</script>
+
+</html>
